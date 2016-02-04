@@ -5,8 +5,6 @@ html {
 body {
    background-color: #348b9e;
    font-family: Orbitron, sans-serif;
-   /*background-color: ;*/
-
 }
 
 /*new-game styling*/
@@ -19,6 +17,7 @@ header {
 .new-game-heading {
    margin-top: 10%;
    margin-bottom: 5%;
+   font-size: 4em;
 }
 .new-game-title {
    margin-top: 1em;
@@ -62,4 +61,47 @@ header {
 .new-game-hard:hover {
    color: #348b9e;
    background-color: #eee;
+}
+
+/*index.html styling*/
+body {
+   margin: 1%;
+}
+
+/*index.html header styling*/
+.memory-header {
+   margin-bottom: 1em;
+
+}
+.memory-title {
+   text-align: center;
+   /*padding-top: 2em;*/
+   /*padding-bottom: 2em;*/
+   font-size: 4em;
+}
+.memory-lives {
+   float: left;
+}
+.memory-time {
+   float:right;
+}
+
+/*index.html ul styling*/
+.memory-game {
+   margin-top: 5em;
+   border: 1px solid black;
+}
+.memory-tileset {
+   list-style: none;
+   padding: 0;
+}
+.memory-tile {
+   height: 100px;
+   width: 100px;
+   position: relative;
+   display: inline-block;
+   border: 1px solid black;
+   text-align: center;
+   border-radius: 1em;
+   background-color: 
 }
