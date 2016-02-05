@@ -80,10 +80,9 @@ header {
    100% {
       background-color: #45a782;
    }
-   0% {-webkit-transform: perspective(100px) rotateZ(2deg);
+   0% {-webkit-transform: rotateZ(1deg), rotateY(10deg);
    }
-   100% {-webkit-transform: perspective(100px) rotateZ(-2deg);
-
+   100% {-webkit-transform: rotateZ(-1deg) rotateY(-10deg);
    }
 
 }
