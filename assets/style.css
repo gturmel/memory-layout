@@ -106,6 +106,7 @@ body {
    border: 1px solid black;
    border-radius: 0.8em;
    background-color: #778899;
+   color: transparent;
    transition: background 1s, -webkit-transform 1s;
 }
 input {
@@ -117,4 +118,5 @@ input {
 input:checked +.tile {
    background: red;
    -webkit-transform: rotateY(180deg);
+   color: white;
 }
