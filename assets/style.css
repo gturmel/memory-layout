@@ -64,6 +64,29 @@ header {
 .new-game-hard-link a:hover{
    color: #348b9e;
 }
+/*New Game screen animation*/
+.new-game-screen {
+   animation-name: bounce;
+   animation-duration: 2.5s;
+   animation-iteration-count: infinite;
+   animation-direction: alternate;
+   -webkit-animation-name: bounce;
+}
+
+@keyframes bounce {
+   0% {
+      background-color: #348b9e
+   }
+   100% {
+      background-color: #45a782;
+   }
+   0% {-webkit-transform: perspective(100px) rotateZ(2deg);
+   }
+   100% {-webkit-transform: perspective(100px) rotateZ(-2deg);
+
+   }
+
+}
 
 /*index.html styling*/
 body {
@@ -121,4 +144,7 @@ input:checked +.tile {
    background: red;
    -webkit-transform: rotateY(180deg);
    color: white;
+}
+input:checked +.tile i {
+   transition-delay: 0.5s;
 }
