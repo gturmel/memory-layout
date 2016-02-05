@@ -95,22 +95,25 @@ body {
    padding: 0;
    /*vertical-align: middle;*/
 }
+.memory-tile {
+   display: inline;
+}
 
+/*flipping tile styling*/
 .tile {
    padding: 3em;
    display: inline-block;
    border: 1px solid black;
    border-radius: 0.8em;
    background-color: #778899;
-   vertical-align: middle;
    transition: background 1s, -webkit-transform 1s;
 }
-/*flipping tile styling*/
 input {
-   width: 100px;
    height: 100px;
+   width: 100px;
    display: none;
 }
+
 input:checked +.tile {
    background: red;
    -webkit-transform: rotateY(180deg);
