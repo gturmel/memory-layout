@@ -10,7 +10,7 @@ body {
 /*new-game styling*/
 
 header {
-   color: white;
+   color: #eee;
    text-align: center;
 }
 
@@ -25,18 +25,10 @@ header {
 }
 
 .new-game-easy {
-   border-top: 0.5em solid #eee;
-   border-right: 1em solid #eee;
-   border-bottom: 0.5em solid #eee;
-   border-left: 0.5em solid #eee;
-   padding-top: 1em;
-   padding-right: 5em;
-   padding-bottom: 1em;
-   padding-left: 0.5em;
-   margin-left: 40%;
-   margin-right: 25%;
-   margin-top: 3%;
-   margin-bottom: 3%;
+   border: 0.5em solid #eee;
+   width: auto;
+   display: inline-block;
+   padding-right: 3em;
 }
 
 .new-game-easy:hover {
@@ -44,18 +36,8 @@ header {
    background-color: #eee;
 }
 .new-game-hard{
-   border-top: 0.5em solid #eee;
-   border-right: 0.5em solid #eee;
-   border-bottom: 0.5em solid #eee;
-   border-left: 1em solid #eee;
-   padding-top: 1em;
-   padding-right: 0.5em;
-   padding-bottom: 1em;
-   padding-left: 5em;
-   margin-left: 25%;
-   margin-right: 40%;
-   margin-top: 3%;
-   margin-bottom: 3%;
+   border: 0.5em solid #eee;
+   padding: 1em;
 }
 
 .new-game-hard:hover {
@@ -97,6 +79,7 @@ body {
 }
 .memory-tile {
    display: inline;
+   margin: 0.4em;
 }
 
 /*flipping tile styling*/
@@ -108,10 +91,12 @@ body {
    background-color: #778899;
    color: transparent;
    transition: background 1s, -webkit-transform 1s;
+   height: 2em;
+   width: 2em;
 }
 input {
-   height: 100px;
-   width: 100px;
+   /*height: 2em;
+   width: 2em;*/
    display: none;
 }
 
