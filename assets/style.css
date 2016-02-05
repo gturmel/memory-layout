@@ -95,7 +95,6 @@ body {
 .memory-tileset {
    list-style: none;
    padding: 0;
-   /*vertical-align: middle;*/
 }
 .memory-tile {
    display: inline;
