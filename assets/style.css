@@ -15,7 +15,7 @@ header {
 }
 
 .new-game-heading {
-   margin-top: 10%;
+   margin-top: 5%;
    margin-bottom: 5%;
    font-size: 4em;
 }
@@ -31,9 +31,10 @@ header {
    padding: 2em 14em;
    color: #eee;
    -webkit-transform: perspective(250px) rotateY(-25deg);
+}
+.new-game-music {
 
 }
-
 .new-game-easy:hover {
    color: #348b9e;
    background-color: #eee;
