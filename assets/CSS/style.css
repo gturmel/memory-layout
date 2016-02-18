@@ -33,7 +33,6 @@ header {
    display: inline-block;
    padding: 2em 14em;
    color: #eee;
-   -webkit-transform: perspective(250px) rotateY(-25deg);
 }
 
 .new-game-easy:hover {
@@ -55,7 +54,6 @@ header {
    display: inline-block;
    padding: 2em 14em;
    color: #eee;
-   -webkit-transform: perspective(250px) rotateY(25deg);
 }
 
 .new-game-hard:hover {
@@ -73,15 +71,15 @@ header {
 
 /*New Game screen animation*/
 
-.new-game-screen {
+/*.new-game-screen {
    animation-name: bounce;
    animation-duration: 2.5s;
    animation-iteration-count: infinite;
    animation-direction: alternate;
    -webkit-animation-name: bounce;
-}
+}*/
 
-@keyframes bounce {
+/*@keyframes bounce {
    0% {
       background-color: #348b9e
    }
@@ -93,7 +91,7 @@ header {
    100% {-webkit-transform: rotateZ(-1deg) rotateY(-10deg);
    }
 
-}
+}*/
 
 /*index.html styling*/
 
@@ -146,21 +144,6 @@ body {
    border-radius: 0.8em;
    background-color: #778899;
    color: transparent;
-   transition: background 1s, -webkit-transform 1s;
    height: 2em;
    width: 2em;
-}
-
-input {
-   display: none;
-}
-
-input:checked +.tile {
-   background: red;
-   -webkit-transform: rotateY(180deg);
-   color: white;
-}
-
-input:checked +.tile i {
-   transition-delay: 0.5s;
 }
