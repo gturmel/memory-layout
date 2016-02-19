@@ -23,9 +23,14 @@ Needs to go to a new page when all the hearts are out. This is the lose screen. 
 Needs to flip on the click.  
 `.on("click", function(){})`  
 So this will be the basis of what I'm going to build, and I need to append things in the function. There's going to be a two click limit. Then they compare `<icon>` class. If same, they're locked open. If they're different, they flip back over, and a heart goes away. If all the tiles get flipped correctly, there's a new screen presented. The win screen. Similar to the lose screen. Show time, tries, and link to a new game (and a harder version).
+I think that having the matched icons go to a new class, or remove all classes to get them out of the rotating game, is going to be a good way to switch things.  
+`.animate(properties[duration][easing][complete])`
 
 `setTimeout(function, delay)` will use a click event, and then pause for a sec before starting the animation.  
 `requestAnimationFrame(callback)` lets the browser know that I'm trying to do an animation.
+`.rotate`  
+[This](https://api.jquery.com/category/effects/) is a link to the page for jQuery animations. Definitely going to be useful.
+`.animate`
 
 
 ### Timer:

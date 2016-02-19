@@ -144,6 +144,7 @@ body {
    border-radius: 0.8em;
    background-color: #778899;
    color: transparent;
+   /*this color: transparent is what hides the icon!*/
    height: 2em;
    width: 2em;
 }
