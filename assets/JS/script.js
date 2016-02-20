@@ -13,7 +13,7 @@ function flipFlop() {
       transform: "rotateY(180deg)"
       // $(this).css("transition", "background 1s -webkit-transform 1s");
    },
-      1000, function(){
+      500, function(){
          $(this).css("background-color", "red");
          $(this).css("color", "white");
       }
@@ -26,24 +26,37 @@ console.log($(".tile i").attr("class"));
 
 // this is the array of all the classes for all the buttons
 
-var classArray = $(".tile i").on("click", function(){
-   $(this).attr("class");
+var classArray = $(".tile").on("click", function(){
+   $(this).children().attr("class");
 });
 
 console.log(classArray);
 
-var firstClassClick = $(".tile", "i").on("click", function(){
-   $(this).attr("class");
-});
+// // get the class of the first click.
+
+var firstClassClick = $(".tile").children().on("click", function(){$(this).attr("class")});
 
 console.log(firstClassClick);
 
-// var secondClassClick = some code that pulls in the second click
+var memoryLives = $(".memory-lives").children();
 
+console.log(memoryLives);
 
-// // get the class of the first click.
-//
-// if (firstClassClick === secondClassClick) {
+if (firstClassClick === secondClassClick) {
+   console.log("You found a match");
+   $(this).addClass("solved");
+   if(".solved".length === ".memory-tile".length){
+      alert("You win!");
+   };
+}
+   else if (firstClassClick !== secondClassClick) {
+      console.log("You did not find a match");
+      $(this).removeClass("flipOver").addClass("flipBack");
+      $(memoryLives).pop();
+      if (memoryLives.length === 0) {
+         alert("Sorry, try again")
+      };
+   };
 //    cards dont flip ever again (change class, or something?)
 //    if (cardsFlipped.length === totalCards.length){
 //       go to win page
