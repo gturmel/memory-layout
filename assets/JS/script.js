@@ -30,6 +30,7 @@ var classArray = $(".tile i").on("click", function(){
    $(this).attr("class");
 });
 
+console.log(classArray);
 
 var firstClassClick = $(".tile", "i").on("click", function(){
    $(this).attr("class");
@@ -51,7 +52,7 @@ console.log(firstClassClick);
 //
 // else if (firstClassClick !== secondClassClick){
 //    remove a heart
-//    if (hearts === 0) {
+//    if (hearts.length === 0) {
 //       go to lose page
 //    }
 //    re-flip the cards
