@@ -3,13 +3,17 @@ $(function(){
    'use strict';
 
 // this is the start of what will be the flip
+ // this turns the background color to red and turns the icon to white.
+ // I can call this function with $(".tile").on("click", flipFlop);
+
+
 
 function flipFlop() {
    $(this).animate({
-      transform: "rotateY(180deg)",
-      transition: "background 1s -webkit-transform 1s"
+      transform: "rotateY(180deg)"
+      // $(this).css("transition", "background 1s -webkit-transform 1s");
    },
-      500, function(){
+      1000, function(){
          $(this).css("background-color", "red");
          $(this).css("color", "white");
       }
@@ -17,6 +21,60 @@ function flipFlop() {
 };
 //
 $(".tile").on("click", flipFlop);
+
+console.log($(".tile i").attr("class"));
+
+// this is the array of all the classes for all the buttons
+
+var classArray = $(".tile i").on("click", function(){
+   $(this).attr("class");
+});
+
+
+var firstClassClick = $(".tile", "i").on("click", function(){
+   $(this).attr("class");
+});
+
+console.log(firstClassClick);
+
+// var secondClassClick = some code that pulls in the second click
+
+
+// // get the class of the first click.
+//
+// if (firstClassClick === secondClassClick) {
+//    cards dont flip ever again (change class, or something?)
+//    if (cardsFlipped.length === totalCards.length){
+//       go to win page
+//    }
+// }
+//
+// else if (firstClassClick !== secondClassClick){
+//    remove a heart
+//    if (hearts === 0) {
+//       go to lose page
+//    }
+//    re-flip the cards
+//
+// }
+
+// get the class of the second click.
+//
+// if the class of the first click === the class of the second click:
+//
+// They stay flipped;
+// they don't take a heart away.
+//
+// if the class of the first click !== the class of the second click
+//
+// they flip background
+// a heart goes away .remove
+//
+// if all the hearts go away: lose screen
+//
+// if all the cards are flipped correctly: win screen.
+//
+
 
 // $(".tile").on("click", function(){
 //    $(this).css("background-color", "red");
