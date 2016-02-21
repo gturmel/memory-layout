@@ -34,9 +34,13 @@ console.log(classArray);
 
 // // get the class of the first click.
 
-var firstClassClick = $(".tile").children().on("click", function(){$(this).attr("class")});
+var firstClassClick = $(".tile").click("i", function(){
+   console.log($(this).html());
+});
 
-console.log(firstClassClick);
+var memoryTile = $(".memory-tile");
+
+
 
 var memoryLives = $(".memory-lives").children();
 
@@ -45,7 +49,7 @@ console.log(memoryLives);
 if (firstClassClick === secondClassClick) {
    console.log("You found a match");
    $(this).addClass("solved");
-   if(".solved".length === ".memory-tile".length){
+   if(".solved".length === memoryTile.length){
       alert("You win!");
    };
 }
@@ -53,6 +57,7 @@ if (firstClassClick === secondClassClick) {
       console.log("You did not find a match");
       $(this).removeClass("flipOver").addClass("flipBack");
       $(memoryLives).pop();
+      // may have to remove something else instead of just pop...
       if (memoryLives.length === 0) {
          alert("Sorry, try again")
       };
