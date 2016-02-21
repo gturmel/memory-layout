@@ -40,7 +40,7 @@ var firstClassClick = $(".tile").click("i", function(){
 
 var memoryTile = $(".memory-tile");
 
-
+console.log(memoryTile);
 
 var memoryLives = $(".memory-lives").children();
 
