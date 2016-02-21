@@ -147,4 +147,12 @@ body {
    /*this color: transparent is what hides the icon!*/
    height: 2em;
    width: 2em;
+   transition: background 1s, -webkit-transform 1s;
+
+}
+
+.clicked {
+   -webkit-transform: rotateY(180deg);
+   background-color: red;
+   color: white; 
 }

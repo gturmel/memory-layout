@@ -101,9 +101,9 @@ if (firstClassClick === secondClassClick) {
 //    $(this).css("transform", "rotateY(180deg)");
 // });
 
-
-
 // This is the timer!
+
+
 
 var start = new Date();
 
