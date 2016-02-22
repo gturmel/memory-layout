@@ -26,16 +26,20 @@ function clickTile() {
       }
       else if (classArray[0] !== classArray[1]){
          console.log("These don't match");
-         $(classArray).each(function(){
-         $(".clicked").removeClass("clicked").addClass("tile")});
+         if(clickCounter % 2 === 0){
+            // I was hoping that this would delay the return flip back
+            $(".clicked").delay(1000);
+            $(".clicked").addClass("tile").removeClass("clicked");
+         }
 // this empties out the array, so I can get two new things to compare
          classArray.pop();
          classArray.pop();
 // this is the part that removes the hearts
+         console.log(clickCounter);
          $(memoryLives[clickCounter / 2]).detach();
 // alerts if you get to zero lives
          if(memoryLives.length === 0){
-            alert("You ran out of tries.")
+            alert("You ran out of tries.");
          }
       }
    }

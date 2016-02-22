@@ -154,7 +154,7 @@ body {
    -webkit-transform: rotateY(180deg);
    background-color: red;
    color: white;
-   /*pointer-events: none;*/
+   pointer-events: none;
 }
 
 .flipped {
