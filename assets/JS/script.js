@@ -26,6 +26,7 @@ function clickTile() {
       }
       else if (classArray[0] !== classArray[1]){
          console.log("These don't match");
+// set timeout wraps this whole things!! That will make this get that delay that I want
          if(clickCounter % 2 === 0){
             // I was hoping that this would delay the return flip back
             $(".clicked").delay(1000);
@@ -60,6 +61,5 @@ $(".tile").on("click", function(){
 }, 1000);
 });
 
-// this is the closing tag
 
-});
+});// end of line
