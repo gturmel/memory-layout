@@ -1,56 +1,45 @@
 $(function(){
    'use strict';
 
-// The function to flip the tiles. Will also add the class of the clicked tile to the [classArray]
 var clickCounter = 0;
-var classArray = [];
+var firstClick = "";
+var secondClick = "";
 var memoryLives = $(".memory-lives").children();
-var totalMatches = 0;
+console.log(memoryLives);
 
-function clickTile() {
+function clickTile(){
    clickCounter++;
-   $(this).addClass("clicked");
-// pointer-events: none will stop the same one from getting clicked on
-   classArray.push($(this).html());
-   console.log(classArray);
-
-   if (classArray.length === 2) {
-      if(classArray[0] === classArray[1]){
-         console.log("You found a match");
-// this sets the cards to not rotate back when a match is found
-         $(classArray).each(function(){
-         $(".clicked").addClass("found").removeClass("clicked")});
-// resets the classArray to zero so I can get two new classes
-         classArray.pop();
-         classArray.pop();
-      }
-      else if (classArray[0] !== classArray[1]){
-         console.log("These don't match");
-// set timeout wraps this whole things!! That will make this get that delay that I want
-         if(clickCounter % 2 === 0){
-            // I was hoping that this would delay the return flip back
-            $(".clicked").delay(1000);
-            $(".clicked").addClass("tile").removeClass("clicked");
-         }
-// this empties out the array, so I can get two new things to compare
-         classArray.pop();
-         classArray.pop();
-// this is the part that removes the hearts
-         console.log(clickCounter);
-         $(memoryLives[clickCounter / 2]).detach();
-// alerts if you get to zero lives
-         if(memoryLives.length === 0){
-            alert("You ran out of tries.");
-         }
-      }
+//first click function here
+   if (clickCounter === 1) {
+      firstClick = $(this).html();
+      $(this).addClass('clicked');
+      console.log(clickCounter + " " + firstClick);
    }
+//second click function here
+   else if (clickCounter === 2){
+      secondClick = $(this).html();
+      $(this).addClass('clicked');
+      console.log(clickCounter);
+      if(firstClick === secondClick){
+         clickCounter = 0;
+          console.log('You found a match');
+      } else {
+         // firstClick.removeClass('clicked');
+         clickCounter = 0;
+         console.log("These don't match");
+//lives counter control
+         memoryLives[memoryLives.length - 1].remove();
+         memoryLives = $(".memory-lives").children();
+         if(memoryLives.length === 0){
+            alert('You lost. Sad Panda');
+         }
+      }
+      clickCounter = 0;
+   }
+}
 
-};
 
-$(".tile").on("click", clickTile);
-
-
-// This is the timer!
+$('.tile').on('click', clickTile);
 
 var start = new Date();
 
@@ -60,6 +49,5 @@ $(".tile").on("click", function(){
 
 }, 1000);
 });
-
 
 });// end of line

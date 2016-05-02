@@ -32,6 +32,30 @@ I think that having the matched icons go to a new class, or remove all classes t
 [This](https://api.jquery.com/category/effects/) is a link to the page for jQuery animations. Definitely going to be useful.
 `.animate`
 
+#### On Click Function:
+
+This function needs to:  
+1. ID first or second click. (click counter?)  
+if 1st click:
+   1. flip the tile (by adding the class)
+   2. store the icon class somewhere, so that we can compare it to second click
+   3. take away the ability to click on the same tile, to stop 'cheating'    
+
+   if 2nd click:
+   1. flip the tile
+   2. compare class to class of 1st click
+      if same:
+      1. remove flipping class/set as permanent class/add permanent class
+      2. click counter to 0
+      if different:
+      1. flip both tiles back after a duration (0.5s)
+      2. click counter to 0
+      3. remove heart
+
+
+
+
+
 
 ### Timer:
 

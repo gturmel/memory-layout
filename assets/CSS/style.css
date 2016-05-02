@@ -155,12 +155,15 @@ body {
    background-color: red;
    color: white;
    pointer-events: none;
+   transition: background 1s, -webkit-transform 1s;
+
 }
 
 .flipped {
    -webkit-transform: rotateY(180deg);
    background-color: #778899;
    color: transparent;
+   transition: background 1s, -webkit-transform 1s;
 }
 
 .found {
