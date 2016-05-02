@@ -5,33 +5,38 @@ var clickCounter = 0;
 var firstClick = "";
 var secondClick = "";
 var memoryLives = $(".memory-lives").children();
-console.log(memoryLives);
+
 
 function clickTile(){
    clickCounter++;
 //first click function here
    if (clickCounter === 1) {
       firstClick = $(this).html();
-      $(this).addClass('clicked');
-      console.log(clickCounter + " " + firstClick);
+      $(this).delay(5000).addClass('clicked');
+
+      console.log(firstClick);
    }
 //second click function here
-   else if (clickCounter === 2){
+   else
+   {
       secondClick = $(this).html();
       $(this).addClass('clicked');
-      console.log(clickCounter);
+      console.log(secondClick);
+
       if(firstClick === secondClick){
          clickCounter = 0;
-          console.log('You found a match');
+         console.log('You found a match');
+         $('.fa').parent('.clicked').addClass('found').removeClass('clicked').removeClass('tile');
       } else {
-         // firstClick.removeClass('clicked');
+
+         $('.fa').parent('clicked')
          clickCounter = 0;
          console.log("These don't match");
 //lives counter control
          memoryLives[memoryLives.length - 1].remove();
          memoryLives = $(".memory-lives").children();
          if(memoryLives.length === 0){
-            alert('You lost. Sad Panda');
+            alert('You lost, Sad Panda');
          }
       }
       clickCounter = 0;
