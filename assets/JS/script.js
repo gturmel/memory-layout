@@ -5,42 +5,57 @@ var clickCounter = 0;
 var firstClick = "";
 var secondClick = "";
 var memoryLives = $(".memory-lives").children();
-
+var firstSelected = "";
+var secondSelected = "";
 
 function clickTile(){
    clickCounter++;
 //first click function here
    if (clickCounter === 1) {
       firstClick = $(this).html();
-      $(this).delay(5000).addClass('clicked');
+      firstSelected = $(this);
 
-      console.log(firstClick);
+      $(firstSelected).addClass('clicked').removeClass('tile');
+
    }
 //second click function here
    else
    {
       secondClick = $(this).html();
-      $(this).addClass('clicked');
-      console.log(secondClick);
-
+      secondSelected = $(this);
+      $(this).addClass('clicked').removeClass('tile');
+//if the two icons match
       if(firstClick === secondClick){
          clickCounter = 0;
-         console.log('You found a match');
-         $('.fa').parent('.clicked').addClass('found').removeClass('clicked').removeClass('tile');
+         setTimeout(function(){
+            $(secondSelected).addClass('found').removeClass('clicked').removeClass('tile');
+         }, 1000);
+         var found = $('.found');
+         console.log(found);
+         if(found.length === 8){
+            alert('You won the game Sad Panda!');
+            location.reload();
+         }
+//if the two icons are not a match
       } else {
 
-         $('.fa').parent('clicked')
          clickCounter = 0;
-         console.log("These don't match");
 //lives counter control
          memoryLives[memoryLives.length - 1].remove();
          memoryLives = $(".memory-lives").children();
          if(memoryLives.length === 0){
             alert('You lost, Sad Panda');
-         }
+            location.reload();
+         };
+         setTimeout(function(){
+            $(firstSelected).addClass('tile').removeClass('clicked');
+            $(secondSelected).addClass('tile').removeClass('clicked');
+         }, 1000);
       }
-      clickCounter = 0;
+//reset all variables for the next round of clicking
+
    }
+
 }
 
 

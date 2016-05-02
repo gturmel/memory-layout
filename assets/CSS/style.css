@@ -152,9 +152,15 @@ body {
 
 .clicked {
    -webkit-transform: rotateY(180deg);
+   padding: 3em;
+   display: inline-block;
+   border: 1px solid black;
+   border-radius: 0.8em;
    background-color: red;
    color: white;
    pointer-events: none;
+   height: 2em;
+   width: 2em;
    transition: background 1s, -webkit-transform 1s;
 
 }
